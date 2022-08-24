@@ -9,6 +9,7 @@ public class Eagle implements  flayble{
 
     @Override
     public void fly() {
-        System.out.println(this.eagle + " Летающее");
+        System.out.println(this.eagle + " Летает");
     }
+
 }

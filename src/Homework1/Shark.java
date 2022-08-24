@@ -9,6 +9,6 @@ public class Shark implements swimable{
 
     @Override
     public void swim() {
-
+        System.out.println(this.shark + " Плавает");
     }
 }

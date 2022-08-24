@@ -9,7 +9,7 @@ public class Fish implements swimable{
 
     @Override
     public void swim() {
-
+        System.out.println(this.fish + " Плавает");
     }
 
 }

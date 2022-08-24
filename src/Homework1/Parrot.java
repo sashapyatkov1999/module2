@@ -9,6 +9,6 @@ public class Parrot implements  flayble{
 
     @Override
     public void fly() {
-
+        System.out.println(this.parrot + " Летает");
     }
 }
