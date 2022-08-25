@@ -1,6 +1,6 @@
 package Homework1;
 
-public class Cat implements bitable {
+public class Cat extends AbstracktZoo1 implements bitable  {
     private String cat;
 
     public Cat(String cat) {

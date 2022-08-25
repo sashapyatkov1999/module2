@@ -1,6 +1,6 @@
 package Homework1;
 
-public class Zoo <T, K, V>  {
+public class Zoo <T extends AbstracktZoo1, K extends AbstractZoo2, V extends AbstractZoo3>  {
     private T good;
     private K good2;
     private V good3;
