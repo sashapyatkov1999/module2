@@ -1,6 +1,6 @@
 package Homework1;
 
-public class Shark extends AbstractZoo2 implements swimable{
+public class Shark  implements swimable{
     private String shark;
 
     public Shark(String shark) {

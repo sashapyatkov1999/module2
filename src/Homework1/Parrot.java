@@ -1,6 +1,6 @@
 package Homework1;
 
-public class Parrot extends AbstractZoo3 implements  flayble{
+public class Parrot  implements  flayble{
     private String parrot;
 
     public Parrot(String parrot) {

@@ -1,5 +1,7 @@
 package Homework1;
 
+import java.util.stream.Stream;
+
 public class Homework1 {
 
     public static void main(String[] args) {
@@ -10,11 +12,11 @@ public class Homework1 {
         Dog dog = new Dog("Собака");
         Eagle eagle = new Eagle("Орел");
         Shark shark = new Shark("Акула");
-        Zoo<Cat, Fish, Parrot> zoo = new Zoo<Cat, Fish, Parrot>(cat, fish, parrot);
-        zoo.getGood().bite();
-        Zoo2<Dog, Shark, Eagle> zoo2 = new Zoo2<Dog, Shark, Eagle>(dog, shark, eagle);
-        zoo2.getGood4().bite();
-
+        Zoo<Fish, Cat, Parrot> zoo = new Zoo<Fish, Cat, Parrot>(fish, cat, parrot);
+        Zoo<Shark, Dog , Eagle> zoo2 = new Zoo<Shark, Dog, Eagle>();
+        zoo2.getBitable();
+        zoo2.getFlyable();
+        zoo2.getSwimable();
 
         //Задача №1
         //Создать интерфейсы flyable (метод void fly()), swimable (метод void swim), bitable (метод void bite)

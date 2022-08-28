@@ -1,38 +1,66 @@
 package Homework1;
 
-public class Zoo <T extends AbstracktZoo1, K extends AbstractZoo2, V extends AbstractZoo3>  {
-    private T good;
-    private K good2;
-    private V good3;
+public class Zoo <T extends swimable, K extends bitable, V extends flayble>  {
+    private T swimable;
+    private K bitable;
+    private V flyable;
     public Zoo(T good, K good2, V good3) {
-        this.good = good;
-        this.good2 = good2;
-        this.good3 = good3;
+        this.swimable = good;
+        this.bitable = good2;
+        this.flyable = good3;
+    }
+    public Zoo(){
+
+    }
+    public void feedFlyable() {
+        System.out.println("Летающее животное ест");
+        flyable.fly();
     }
 
-    public void setGood2(K good2) {
-        this.good2 = good2;
+    public void feedSwimable() {
+        System.out.println("Плавающие животное ест");
+        swimable.swim();
     }
 
-    public K getGood2() {
-        return good2;
+    public void feedBitable() {
+        System.out.println("Кусающее животное ест");
+        bitable.bite();
     }
 
-    public void setGood3(V good3) {
-        this.good3 = good3;
+    public void setFlyable(V flyable) {
+        this.flyable = flyable;
     }
 
-    public V getGood3() {
-        return good3;
+    public void setBitable(K bitable) {
+        this.bitable = bitable;
     }
 
-    public T getGood() {
-        return good;
+    public void setSwimable(T swimable) {
+        this.swimable = swimable;
     }
 
-    public void setGood(T good) {
-        this.good = good;
+    public V getFlyable() {
+        return flyable;
     }
 
+    public K getBitable() {
+        return bitable;
+    }
 
+    public T getSwimable() {
+        return swimable;
+    }
+
+    @Override
+    public String toString() {
+        return "Zoo{" +
+                "swimable=" + swimable +
+                ", bitable=" + bitable +
+                ", flyable=" + flyable +
+                '}';
+    }
 }
+
+
+
+

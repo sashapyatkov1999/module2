@@ -1,56 +1,52 @@
 package Homework1;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class MyList<T> {
-    private  T[] object;
-    private final int size = 3;
-
-    public MyList(Class<T[]> clazz) {
-        object = clazz.cast(Array.newInstance(clazz.getComponentType(), size));
-    }
+    private T[] objects = (T[]) new Object[3];
+    private int size;
 
     public static void main(String[] args) {
-        MyList<Integer> foo = new MyList(Integer[].class);
-        Integer[] bar = foo.object;
-        foo.add(3);
-        foo.add(2);
-        foo.add(1);
-        foo.add(2);
-        System.out.println(foo);
+        MyList<Integer> list = new MyList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        System.out.println(list);
+    }
+    public void add(T element){
+        if (objects.length == size){
+            T[] newObjects = (T[]) new Object[objects.length * 2];
+            for (int i = 0; i < objects.length; i++) {
+                newObjects[i] = objects[i];
+            }
+            this.objects = newObjects;
+        }
+        objects[size] = element;
+        size++;
     }
 
-
-    public boolean add(Integer number) {
-        boolean elementsNotNull = true;
-        for (int i = 0; i < object.length; i++) {
-            if (object[i] == null){
-                elementsNotNull = false;
-                break;
-            }
-        }
-        if (elementsNotNull ){
-//            Class<T>[] newArray = new Class[object.length*2];
-//
-//            for (int i = 0; i < object.length; i++) {
-//                newArray[i] = (Class<T>) object[i];
-//            }
-        }
-        for (int i = 0; i < object.length; i++) {
-            if (object[i] == null) {
-                object[i] = (T) number;
-                break;
-            }
-        }
-        return true;
+    public T[] getObjects() {
+        return objects;
     }
 
     @Override
     public String toString() {
-        return "MyList{" +
-                "object=" + Arrays.toString(object) +
-                '}';
+        String result = "";
+        for (T object: objects) {
+            if (object != null){
+                result += object.toString() + " ";
+            }
+        }
+        result = result.substring(0,result.length()-1);
+        return "MyList{" + result + "}";
     }
+
+    //Задача №2
+    //Создать класс MyList с атрибутами T[] objects, int size. T - generics.
+    //Массив T[] будет создаваться при создании экземпляра класса MyList с размерностью 3.
+    //Создать метод add. Он будет добавлять элемент в массив object. Если в массиве уже 3 элемента есть, то нужно:
+    //1.Создать новый массив T[] с размерностью в два раза больше предыдущей.
+    //2.Скопировать со старого массива все значения в новый
+    //3.Присвоить экземпляру MyList новый массив.
 }
 
