@@ -17,7 +17,7 @@ public class Homework2 {
                 .map(integer -> Stream.generate(() -> random.nextInt(10))
                         .limit(integer)
                         .collect(Collectors.toList()))
-                .flatMap(integers1 -> integers1.stream())
+                .flatMap(integers1 ->   integers1.stream())
                 .map(integer -> integer * 10)
                 .reduce(Integer::sum)
                 .ifPresentOrElse(System.out::println, () -> System.out.println(0));
