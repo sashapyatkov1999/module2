@@ -21,7 +21,6 @@ public class UserMeta {
         Thread.sleep(10);
         System.out.println("111");
     }
-
     public static void getAnnotationClass(UserMeta userMeta) throws NoSuchMethodException {
         Class clazz = userMeta.getClass();
 
@@ -49,6 +48,5 @@ public class UserMeta {
             long end  = System.currentTimeMillis();
             System.out.println("Время " + (start - end));
         }
-
     }
 }
